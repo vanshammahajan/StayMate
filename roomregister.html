@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register Room for Rent</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .form-container {
+      background-color: white;
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #007bff;
+    }
+
+    label {
+      display: block;
+      margin: 12px 0 6px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="file"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      resize: vertical;
+    }
+
+    textarea {
+      height: 100px;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Register Room for Rent</h2>
+    <form action="{{url_for('room_register')}}" method="POST">
+      <label for="title">Room Title:</label>
+      <input type="text" id="title" name="title" placeholder="e.g. Spacious Room near Downtown" required>
+
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" placeholder="Add room details..." required></textarea>
+
+      <label for="rent">Monthly Rent (in ₹):</label>
+      <input type="number" id="rent" name="rent" required>
+
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" placeholder="Street, City, State, ZIP" required></textarea>
+
+      <label for="rooms">Number of Rooms:</label>
+      <input type="number" id="rooms" name="rooms" required>
+
+      <label for="city">City</label>
+      <input type="text" id="city" name="city" placeholder="city where room is located" required>
+
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

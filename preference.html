@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Roommate Preference Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 20px;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+
+    a:hover {
+      background-color: #0056b3;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      max-width: 700px;
+      margin: 0 auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-top: 20px;
+      display: block;
+    }
+
+    .options {
+      margin-top: 8px;
+      margin-left: 20px;
+    }
+
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 12px 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="{{ url_for('home') }}">← Home</a>
+
+  <form action="{{ url_for('preference') }}" method="POST">
+    <h2>Roommate Preference Form</h2>
+
+    <label for="city">1. City: </label>
+    <input id="city" type="text" name="city" placeholder="Enter city name">
+
+    <label>2. Would you prefer a roommate from the same hometown?</label>
+    <div class="options">
+      <input type="radio" name="sameHometown" value="Yes" required> Yes
+      <input type="radio" name="sameHometown" value="No"> No
+    </div>
+
+    <label>3. Are you comfortable living with a non-vegetarian roommate?</label>
+    <div class="options">
+      <input type="radio" name="nonVegRoommate" value="Yes" required> Yes
+      <input type="radio" name="nonVegRoommate" value="No"> No
+    </div>
+
+    <label>4. Do you smoke?</label>
+    <div class="options">
+      <input type="radio" name="smoke" value="Yes" required> Yes
+      <input type="radio" name="smoke" value="No"> No
+    </div>
+
+    <label>5. Do you consume alcohol?</label>
+    <div class="options">
+      <input type="radio" name="alcohol" value="Yes" required> Yes
+      <input type="radio" name="alcohol" value="No"> No
+      <input type="radio" name="alcohol" value="Occasionally"> Occasionally
+    </div>
+
+    <label>6. Religion preference for roommate:</label>
+    <div class="options">
+      <input type="radio" name="religionPreference" value="Any" required> Any
+      <input type="radio" name="religionPreference" value="Prefer my own"> Prefer my own
+    </div>
+
+    <label>7. What’s your daily rhythm?</label>
+    <div class="options">
+      <input type="radio" name="dailyRhythm" value="Early bird" required> Early bird
+      <input type="radio" name="dailyRhythm" value="Night owl"> Night owl
+    </div>
+
+    <label>8. Social personality:</label>
+    <div class="options">
+      <input type="radio" name="socialPersonality" value="Introvert" required> Introvert
+      <input type="radio" name="socialPersonality" value="Extrovert"> Extrovert
+    </div>
+
+    <label>9. Do you enjoy loud music or house parties at home?</label>
+    <div class="options">
+      <input type="radio" name="loudMusic" value="Yes" required> Yes
+      <input type="radio" name="loudMusic" value="No"> No
+    </div>
+
+    <label>10. Are you okay with fairly splitting groceries?</label>
+    <div class="options">
+      <input type="radio" name="splitGroceries" value="Yes" required> Yes
+      <input type="radio" name="splitGroceries" value="No"> No
+    </div>
+
+    <label>11. How do you usually manage daily chores?</label>
+    <div class="options">
+      <input type="radio" name="chores" value="Do it myself" required> Do it myself
+      <input type="radio" name="chores" value="By maid"> By maid
+      <input type="radio" name="chores" value="Outsource"> Outsource
+    </div>
+
+    <label>12. Preferred way of keeping shared spaces clean:</label>
+    <div class="options">
+      <input type="radio" name="cleaningPreference" value="Alternate turns" required> Alternate turns
+      <input type="radio" name="cleaningPreference" value="Hire a maid"> Hire a maid
+      <input type="radio" name="cleaningPreference" value="Don’t mind a bit of mess"> Don’t mind a bit of mess
+    </div>
+
+    <label>13. Noise tolerance level:</label>
+    <div class="options">
+      <input type="radio" name="noiseTolerance" value="Prefer a quiet environment" required> Prefer a quiet environment
+      <input type="radio" name="noiseTolerance" value="Okay with regular noise"> Okay with regular noise
+    </div>
+
+    <label>14. Are you okay with pets at home?</label>
+    <div class="options">
+      <input type="radio" name="pets" value="Yes" required> Yes
+      <input type="radio" name="pets" value="No"> No
+      <input type="radio" name="pets" value="Depends on the pet"> Depends on the pet
+    </div>
+
+    <label>15. Guests policy: Are you comfortable with overnight visitors?</label>
+    <div class="options">
+      <input type="radio" name="overnightGuests" value="Yes" required> Yes
+      <input type="radio" name="overnightGuests" value="No"> No
+      <input type="radio" name="overnightGuests" value="Only with prior notice"> Only with prior notice
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+</body>
+</html>

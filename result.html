@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Match Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            padding: 40px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .match {
+            background: #e6f2ff;
+            border-left: 6px solid #3399ff;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        .match p {
+            margin: 0;
+            font-size: 18px;
+        }
+        .score {
+            font-weight: bold;
+            color: #007acc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Best Matches</h1>
+
+        {% if data %}
+            {% for user_id, score in data.items() %}
+                <div class="match">
+                    <p><strong>User ID:</strong> {{ user_id }}</p>
+                    <p><strong>Compatibility Score:</strong> <span class="score">{{ score }}%</span></p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No matching users found in your selected city.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

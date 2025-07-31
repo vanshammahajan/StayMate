@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rooms in {{ city }}</title>
+</head>
+<body>
+    <h1>Available Rooms in {{ city }}</h1>
+    {% if rooms %}
+        <ul>
+            {% for room in rooms %}
+                <li>
+                    <strong>{{ room[0] }}</strong><br>
+                    Address: {{ room[1] }}<br>
+                    Rooms: {{ room[2] }}<br>
+                    Description: {{ room[3] }}<br>
+                    Rent: ₹{{ room[4] }}<br>
+                    City: {{ room[5] }}<br><br>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No rooms found in this city.</p>
+    {% endif %}
+</body>
+</html>

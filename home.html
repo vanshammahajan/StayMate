@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background-color: #f9f9f9;
+        }
+
+        a {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 25px;
+            text-decoration: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <a href="{{ url_for('preference_form') }}">Preference Form</a>
+    <a href="{{ url_for('find_form') }}">Find Roommate</a>
+    <a href="{{url_for('room_option')}}">Room Options</a>
+</body>
+</html>
